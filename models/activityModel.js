@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const activityPeriodSchema = new Schema({
-    startTime: {
+    start_time: {
         type: String,
         required: true
     },
-    endTime: {
+    end_time: {
         type: String,
         required: true
     }
@@ -18,7 +18,7 @@ const activitySchema = new Schema({
     type: String,
     required: true,
   },
-  activityPeriod: [activityPeriodSchema]
+  activity_period: [activityPeriodSchema]
 },{ timestamps: true });
 
 let ActivityModel = mongoose.model('Activity', activitySchema);

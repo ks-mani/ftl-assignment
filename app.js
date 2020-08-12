@@ -5,12 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
+const dbConf = require('./dbConfig.js')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiUserRouter = require('./routes/apiUsers.js')
 
 mongoose
-  .connect('mongodb://127.0.0.1/27017fullThrottle', {
+  .connect(dbConf.mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
