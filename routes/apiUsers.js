@@ -6,10 +6,16 @@ const bodyParser = require('body-parser')
 
 apiUserRouter.use(bodyParser.json())
 
-apiUserRouter
-    .get('/', (req,res)=>{
+apiUserRouter.route('/')
+    .get((req,res)=>{
         res.statusCode=200;
         res.end('Done')
+    })
+
+apiUserRouter.route('/:userId')
+    .get((req, res)=>{
+        res.statusCode=200;
+        res.end(req.params.userId)
     })
 
 
